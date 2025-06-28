@@ -24,6 +24,16 @@ def test_plot():
     flow()
 
 
+def test_scatter():
+    x = np.random.randn(1000)
+    y = np.random.randn(1000)
+    plot_node = nplots.ScatterNode()
+    plot_node.input(x, y)
+    display_mpl_fig_node = nodes.DisplayMplFigureNode()
+    flow = flows.Sequential(plot_node, display_mpl_fig_node)
+    flow()
+
+
 def test_img():
     x = np.linspace(0, 3.14159265 * 2, 1000)
     y = _f(x)
@@ -38,6 +48,7 @@ def test_img():
 def main():
     test_hello_world()
     test_plot()
+    test_scatter()
     test_img()
 
 
