@@ -1,9 +1,13 @@
 from typing import Optional
 from node import Node
 
+
 class HelloWorldNode(Node):
+    _input: Optional[str] = None
+
     def __init__(self, w: Optional[str] = None):
         self._input = w
+        super().__init__()
 
     def input(self, w: str):
         self._input = w
@@ -11,7 +15,7 @@ class HelloWorldNode(Node):
     def exec(self):
         if self._input is None:
             self._input = ""
-        self._output = f'Hello world from {self._input}!'
+        self._output = f"Hello world from {self._input}!"
 
     def output(self) -> str:
         if self._output is None:

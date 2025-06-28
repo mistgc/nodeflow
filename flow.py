@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Any
 from abc import ABC, abstractmethod
 
+
 class Flow(BaseModel, ABC):
     def input(self, *args, **kwargs) -> Any:
         return None
@@ -15,3 +16,6 @@ class Flow(BaseModel, ABC):
 
     def terminate(self):
         raise InterruptedError("Flow terminate.")
+
+    def __call__(self, *args, **kwargs) -> Any:
+        return self.exec(*args, **kwargs)

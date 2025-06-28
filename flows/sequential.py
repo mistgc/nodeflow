@@ -2,6 +2,7 @@ from typing import Optional, List, Any
 from node import Node
 from flow import Flow
 
+
 class Sequential(Flow):
     _node_list: List[Node] = []
     _output: Optional[Any] = None
