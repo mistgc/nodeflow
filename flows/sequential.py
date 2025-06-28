@@ -16,7 +16,7 @@ class Sequential(Flow):
         for node in self._node_list:
             if params is not None:
                 node.input(params)
-            node.exec()
+            node._exec()
             params = node.output()
         self._output = params
 

@@ -4,6 +4,7 @@ from node import Node
 
 class HelloWorldNode(Node):
     _input: Optional[str] = None
+    _output: Optional[str] = None
 
     def __init__(self, w: Optional[str] = None):
         self._input = w
