@@ -22,4 +22,4 @@ class DisplayMplFigureNode(Node):
         plt.show()
 
     def get_node_id(self) -> str:
-        return "display_image_node"
+        return "display_mpl_figure_node"
