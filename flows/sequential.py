@@ -7,6 +7,7 @@ class Sequential(Flow):
     _output: Optional[Any] = None
 
     def __init__(self, *nodes: Node):
+        super().__init__()
         self._node_list.extend(nodes)
 
     def exec(self):

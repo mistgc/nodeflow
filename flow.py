@@ -1,7 +1,8 @@
+from pydantic import BaseModel
 from typing import Any
 from abc import ABC, abstractmethod
 
-class Flow(ABC):
+class Flow(BaseModel, ABC):
     def input(self, *args, **kwargs) -> Any:
         return None
 

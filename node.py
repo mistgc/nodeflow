@@ -1,10 +1,14 @@
+from pydantic import BaseModel
 from typing import Optional, Any
 from abc import ABC, abstractmethod
 
-class Node(ABC):
+
+class Node(BaseModel, ABC):
+    _input: Optional[Any] = None
+    _output: Optional[Any] = None
+
     def __init__(self):
-        _input: Optional[Any] = None
-        _output: Optional[Any] = None
+        return
 
     def input(self, *_args, **_kwargs) -> Any:
         return None
