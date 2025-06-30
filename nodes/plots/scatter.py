@@ -31,5 +31,6 @@ class ScatterNode(Node):
             raise ValueError("The `_fig` of the `ScatterNode` is None.")
         return self._fig
 
-    def get_node_id(self) -> str:
+    @property
+    def node_id(self) -> str:
         return "plots/scatter_node"

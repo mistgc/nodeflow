@@ -45,11 +45,20 @@ def test_img():
     flow()
 
 
+def test_request():
+    dest = "https://bilibili.com"
+    flow = flows.Sequential(
+        nodes.GetRequestNode(dest), nodes.utils.Resp2TextNode(), nodes.PrintStrNode()
+    )
+    flow()
+
+
 def main():
     test_hello_world()
     test_plot()
     test_scatter()
     test_img()
+    test_request()
 
 
 if __name__ == "__main__":

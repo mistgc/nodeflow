@@ -31,5 +31,6 @@ class PlotNode(Node):
             raise ValueError("The `_fig` of the `PlotNode` is None.")
         return self._fig
 
-    def get_node_id(self) -> str:
+    @property
+    def node_id(self) -> str:
         return "plots/plot_node"

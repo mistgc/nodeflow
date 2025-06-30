@@ -1,5 +1,5 @@
 from typing import Optional, List, Any
-from node import Node
+from node import Node, NodeStatus
 from flow import Flow
 
 
@@ -17,7 +17,12 @@ class Sequential(Flow):
             if params is not None:
                 node.input(params)
             node._exec()
-            params = node.output()
+            if node.status == NodeStatus.Completed:
+                params = node.output()
+            elif node.status == NodeStatus.Erred:
+                raise RuntimeError(f"[Err] {node.node_id}: {node.emsg}")
+            else:
+                raise NotImplementedError()
         self._output = params
 
     def output(self):

@@ -27,5 +27,6 @@ class Fig2ImgNode(Node):
             raise ValueError("The `_img` of the `Fig2ImgNode` is None.")
         return self._img
 
-    def get_node_id(self) -> str:
+    @property
+    def node_id(self) -> str:
         return "utils/fig2img_node"

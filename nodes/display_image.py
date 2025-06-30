@@ -28,5 +28,6 @@ class DisplayImageNode(Node):
         self._fig.show()
         plt.show()
 
-    def get_node_id(self) -> str:
+    @property
+    def node_id(self) -> str:
         return "display_image_node"

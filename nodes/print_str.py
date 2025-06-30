@@ -12,5 +12,6 @@ class PrintStrNode(Node):
     def exec(self):
         print(self._input)
 
-    def get_node_id(self) -> str:
+    @property
+    def node_id(self) -> str:
         return "print_str_node"

@@ -23,5 +23,6 @@ class HelloWorldNode(Node):
             raise ValueError("The output of the HelloWorldNode is None")
         return self._output
 
-    def get_node_id(self) -> str:
+    @property
+    def node_id(self) -> str:
         return "hello_world_node"
